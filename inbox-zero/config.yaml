@@ -1,0 +1,53 @@
+name: Inbox Zero
+version: "0.1.0"
+slug: inbox-zero
+image: ghcr.io/smobaraki/inbox-zero-ha-addon
+description: >
+  Inbox Zero, the open source AI email assistant, as a Home Assistant add-on.
+  Runs the official pre-built stack (web app, BullMQ queue worker and the
+  scheduled-tasks cron loop) plus embedded PostgreSQL 16, Redis 7 and the
+  Upstash-compatible Redis HTTP bridge on the host Docker daemon. No external
+  services required.
+url: https://github.com/elie222/inbox-zero
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+init: false
+timeout: 300
+hassio_api: false
+homeassistant_api: false
+docker_api: true
+apparmor: false
+options:
+  domain: ""
+  http_port: 3000
+  google_client_id: ""
+  google_client_secret: ""
+  google_pubsub_topic_name: ""
+  microsoft_client_id: ""
+  microsoft_client_secret: ""
+  microsoft_tenant_id: common
+  llm_api_key: ""
+  default_llms: "anthropic:claude-sonnet-4-6"
+  auth_allowed_emails: ""
+  bypass_premium_checks: true
+  app_release: latest
+  extra_env: []
+schema:
+  domain: str
+  http_port: int(1,65535)
+  google_client_id: str
+  google_client_secret: str
+  google_pubsub_topic_name: str
+  microsoft_client_id: str
+  microsoft_client_secret: str
+  microsoft_tenant_id: str
+  llm_api_key: str
+  default_llms: str
+  auth_allowed_emails: str
+  bypass_premium_checks: bool
+  app_release: str
+  extra_env:
+    - str
