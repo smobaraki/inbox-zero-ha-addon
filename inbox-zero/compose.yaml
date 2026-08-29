@@ -83,7 +83,7 @@ services:
     restart: unless-stopped
     environment: *web-env
     env_file:
-      - ${DATA_DIR}/extra.env
+      - /data/extra.env
     ports:
       - ${HTTP_PORT}:3000
     depends_on:
@@ -100,7 +100,7 @@ services:
     restart: unless-stopped
     environment: *web-env
     env_file:
-      - ${DATA_DIR}/extra.env
+      - /data/extra.env
     depends_on:
       web:
         condition: service_started

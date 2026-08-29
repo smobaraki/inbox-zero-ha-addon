@@ -1,5 +1,5 @@
 name: Inbox Zero
-version: "0.1.0"
+version: "0.1.1"
 slug: inbox-zero
 image: ghcr.io/smobaraki/inbox-zero-ha-addon
 description: >
